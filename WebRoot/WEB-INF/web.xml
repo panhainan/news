@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+	<servlet>
+		<servlet-name>Index</servlet-name>
+		<servlet-class>com.phn.servlet.IndexServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>News</servlet-name>
+		<servlet-class>com.phn.servlet.NewsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Category</servlet-name>
+		<servlet-class>com.phn.servlet.CategoryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewsManageServlet</servlet-name>
+		<servlet-class>com.phn.servlet.NewsManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CategoryManageServlet</servlet-name>
+		<servlet-class>com.phn.servlet.CategoryManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ManageServlet</servlet-name>
+		<servlet-class>com.phn.servlet.ManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CommentManageServlet</servlet-name>
+		<servlet-class>com.phn.servlet.CommentManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginFilter</servlet-name>
+		<servlet-class>com.phn.filter.LoginFilter</servlet-class>
+	</servlet>
+
+
+
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.phn.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/back/manage/news</url-pattern>
+		<url-pattern>/back/manage/category</url-pattern>
+		<url-pattern>/back/manage/comment</url-pattern>
+	</filter-mapping>
+
+
+
+	<servlet-mapping>
+		<servlet-name>Index</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>News</servlet-name>
+		<url-pattern>/news</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Category</servlet-name>
+		<url-pattern>/category</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsManageServlet</servlet-name>
+		<url-pattern>/back/manage/news</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CategoryManageServlet</servlet-name>
+		<url-pattern>/back/manage/category</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManageServlet</servlet-name>
+		<url-pattern>/back/manage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CommentManageServlet</servlet-name>
+		<url-pattern>/back/manage/comment</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
